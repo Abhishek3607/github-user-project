@@ -36,16 +36,19 @@ export default function UserSearch() {
     if (e.key === "Enter") fetchUser();
   };
 
-  // ✅ RETURN MUST BE INSIDE FUNCTION
   return (
     <div className={styles.container}>
       <div className={styles.cardWrapper}>
-        <h1 className={styles.title}>GitHub User Search</h1>
+        
+        <h1 className={styles.title}>GitHub Explorer</h1>
+        <p className={styles.subtitle}>
+          Discover any developer profile, followers, and repositories instantly.
+        </p>
 
         <div className={styles.searchBox}>
           <input
             type="text"
-            placeholder="Enter username..."
+            placeholder="Enter GitHub username..."
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             onKeyDown={handleKeyDown}
@@ -65,7 +68,12 @@ export default function UserSearch() {
 
         {user && (
           <div className={styles.profileCard}>
-            <img src={user.avatar_url} width={100} />
+            <img
+              src={user.avatar_url}
+              alt="avatar"
+              width={100}
+              className={styles.avatar}
+            />
 
             <h2 className={styles.name}>
               {user.name || user.login}
@@ -89,6 +97,15 @@ export default function UserSearch() {
                 <p>Repos</p>
               </div>
             </div>
+
+            <a
+              href={user.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.profileBtn}
+            >
+              View GitHub Profile →
+            </a>
           </div>
         )}
       </div>

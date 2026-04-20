@@ -4,13 +4,13 @@ Users can enter a GitHub username and view basic profile information instantly
 
 How to Run the Project:
 
-1. Install dependencies
+1. Install dependencies:
 npm install
 
-2. Run development server
+2. Run development server:
 npm run dev
 
-3. Open in browser
+3. Open in browser:
 http://localhost:3000
 
 API Used
